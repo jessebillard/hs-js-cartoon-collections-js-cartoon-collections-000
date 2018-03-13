@@ -1,14 +1,15 @@
-//cuidado amigos
+//dori, nori, ori, oin, gloin, fili, kili, bifur, bofur, bombur, dwalin, balin, and thorin oakenshield.
 function dwarfRollCall(dwarves) {
   var newDwarves = [];
-  for(let i = 0; i < dwarves.length; i++) {
-    newDwarves.push(`${i + 1}. ${dwarves[i]}`);
-  } var lastDwarf = newDwarves[newDwarves.length -1] + ' ' ;
-    newDwarves.splice(-1);
-    newDwarves.push(lastDwarf);
+  var lastHalf = dwarves.splice(dwarves.length / 2)
+  for(let i = 0; i < lastHalf.length; i++) {
+    newDwarves.push(`${i + 1}. ${lastHalf[i]}`);
+  } 
+    newDwarves.push('');
     return newDwarves.join(' ');
 }
-
+var dudes = ['bro', 'brah', 'bruh'];
+console.log(dwarfRollCall(dudes));
 
 //HE HATH BEEN SUMMONED!
 function summonCaptainPlanet(planeteerCalls){
@@ -26,25 +27,34 @@ function longPlaneteerCalls(words) {
       return true;
     } else {
         return false;
-    }
+      }
   }
 }
 
 // PLS CHEESE PLS
 function findTheCheese (foods) {
   var firstCheese = [];
-  var cheese = ['gouda', 'cheddar', 'camembert'];
+  var cheese = ['gouda', 'cheddar', 'camembert', 'swiss'];
   var message = 'no cheese!';
-  for (let i = 0; i < foods.length; i++) {
-    if (foods[i] === cheese[i]) {
-      firstCheese.push(foods[i]);
-      return firstCheese;
-    } 
-  }  
-  for (let j = 0; j < foods.length; j++) {
-    if (foods[j] !== cheese[j]) {
-      return message;
-    }
-  }
   
+  for (let i = 0; i < foods.length; i++) {
+      if (foods[i] === cheese[i]) {
+        firstCheese.push(foods[i]);
+        return firstCheese;
+      }
+    
+    } 
+        return 'no cheese!'
+   
+   
+  
+}
+
+function wordsWithB(words) {
+  var bWords = []
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].startsWith('b')) {
+      bWords.push(words[i])
+    }
+  } return bWords;
 }
